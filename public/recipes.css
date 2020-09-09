@@ -1,0 +1,107 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
+
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#content{
+    margin: 0 16%;
+    width: 68%;
+}
+
+header{
+    margin-top: 6vh;
+    display: flex;
+    text-align: center;
+}
+
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 122px;
+    gap: 20px;
+}
+
+.menu a{
+    margin-top: 1.9px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #111111;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.recipes{
+    font-weight: bold;
+}
+
+.cards{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card{
+    cursor: pointer;
+}
+
+.card img{
+    width: 294px;
+    height: 140px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.card h2{
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: #111111;
+    margin-bottom: 0;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card h3{
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #777777;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.recipe img{
+    margin-top: 50px;
+    border-radius: 160px;
+}
+
+.name{
+    align-items: center;
+}
+
+.hidden{
+    visibility: visible;
+}
+
+.hidden.active{
+    visibility: hidden;
+    position: relative;
+}
+
+.footer h3{
+    font-weight: normal;
+    font-size: 14px;
+    color: #999999;
+    text-align: center;
+    background: #EEEEEE;
+    padding: 23px 0;
+    margin: 40px 0 0 0;
+}

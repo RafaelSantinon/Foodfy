@@ -1,0 +1,126 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap";
+
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+#content{
+    margin: 0 16%;
+    width: 68%;
+}
+
+header{
+    margin-top: 6vh;
+    display: flex;
+    text-align: center;
+}
+
+.menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 122px;
+    gap: 20px;
+}
+
+.menu a{
+    margin-top: 1.9px;
+    text-align: left;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    color: #111111;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.info{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    background-color: #FBDFDB;
+    height: 25%;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.content{
+    margin: auto 0 auto 60px;
+}
+
+.content h1{
+    font-size: 32px;
+    font-weight: bold; 
+    line-height: 42px; 
+    margin-bottom: 0; 
+}
+
+.content p{
+    margin-top: 10px;
+    width: 90%;
+    opacity: 0.7;
+    font-family: Roboto-Regular;
+    font-size: 18px;
+    color: #000000;
+    line-height: 28px;
+}
+
+.info img{
+    margin: 66px 0px 0 154px;
+}
+
+section h2{
+    font-family: Roboto-Bold;
+    font-size: 24px;
+    color: #111111;
+    margin-bottom: 20px;
+}
+
+.most-accessed{
+    margin-top: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.card{
+    cursor: pointer;
+}
+
+.card img{
+    width: 294px;
+    height: 140px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.card h2{
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: #111111;
+    margin-bottom: 0;
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card h3{
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #777777;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.footer h3{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: #999999;
+    text-align: center;
+    background: #EEEEEE;
+    padding: 23px 0;
+    margin: 40px 0 0 0;
+}

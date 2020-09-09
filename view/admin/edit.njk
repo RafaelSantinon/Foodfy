@@ -1,0 +1,60 @@
+{% extends "admin/layout.njk" %}
+
+{% block head %}
+<head>
+    <title>Foodfy - Editar - {{items.title}}</title>
+    <link rel="stylesheet" href="/admin.css">
+</head>
+{% endblock %}
+
+{% block content %}
+<div class="edit">
+    <h1>Editando receita</h1>
+    <div class="buttons">
+        <a id="deleteButton" href="">Deletar</a>
+        <a href="">Salvar receita</a>
+    </div>
+</div>
+
+<form action="/admin/index" >
+
+    <div class="item">
+        <h3>Imagem da receita</h3>
+        <input 
+            type="url"
+            name="image" 
+            placeholder="https://"
+            alt="Imagem da receita"
+            value="{{item.image}}">
+    </div>
+
+    <div class="item">
+        <h3>Ingredientes</h3>
+        {% for ingredient in item.ingredients%}
+        <input 
+            type="text"
+            name="ingredients"
+            value="{{ingredient}}">
+        {% endfor %}
+    </div>
+
+    <div class="item">
+        <h3>Modo de preparo</h3>
+        {% for preparation in item.preparation%}
+        <input 
+            type="text"
+            name="´preparation"
+            value="{{preparation}}">
+        {% endfor %}
+    </div>
+
+    <div class="item">
+        <h3>informações adicionais</h3>
+        <input 
+            type="text"
+            name="information"
+            value="{{item.information}}">
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+<head>
+    <title>Foodfy - {{items.title}}</title>
+    <link rel="stylesheet" href="/recipe.css">
+</head>
+{% endblock %}
+
+{% block menu %}
+<div class="menu">
+    <a href="/aboutus">Sobre</a>
+    <a class="recipes" href="/recipes">Receitas</a>
+</div>
+{% endblock %}
+
+{% block content %} 
+<section id="recipe">
+
+    <img src="{{items.image}}" alt="Imagem de {{items.title}}">
+
+    <div class="name">
+        <h1>{{items.title}}</h1>
+        <p>por {{items.author}}</p>
+    </div>
+
+    <div class="card-recipe">
+        <div class="cabeça">
+            <h2>Ingredientes</h2>
+            <h3 class="secret">Remover</h2>
+        </div>
+            <ul>
+                <div class="hidden">
+                    {% for ingredient in items.ingredients %}
+                    <li>{{ingredient}}</li>
+                    {% endfor %}
+                </div> 
+            </ul>
+    </div>
+
+    <div class="card-recipe">
+        <div class="cabeça">
+            <h2>Modo de preparo</h2>
+            <h3 class="secret">Remover</h2>
+        </div>
+            <ul>
+                <div class="hidden">
+                    {% for preparation in items.preparation %}
+                    <li>{{preparation}}</li>
+                    {% endfor %}
+                </div>
+            </ul>
+    </div>
+
+    <div class="card-recipe">
+        <div class="cabeça">
+            <h2>Informaçoes adicionais</h2>
+            <h3 class="secret">Remover</h2>
+        </div>
+            <div class="hidden">
+                <p>{{items.information}}</p>
+            </div>
+    </div>
+
+</section>
+{% endblock %}
+
+{% block script %}
+<script src="/scripts.js"></script>
+{% endblock %}
