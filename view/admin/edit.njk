@@ -11,12 +11,27 @@
 <div class="edit">
     <h1>Editando receita</h1>
     <div class="buttons">
-        <a id="deleteButton" href="">Deletar</a>
-        <a href="">Salvar receita</a>
+        <form id="form-delete" method="POST" action="/admin/recipes?_method=DELETE">
+
+            <input 
+                type="hidden" 
+                name="id" 
+                value="{{item.index}}"
+            >
+
+            <button type="submit">Deletar</button>
+
+        </form>
     </div>
 </div>
 
-<form action="/admin/index" >
+<form method="POST" action="/admin/recipes?_method=PUT" >
+
+    <input 
+        type="hidden" 
+        name="index" 
+        value="{{item.index}}"
+    >
 
     <div class="item">
         <h3>Imagem da receita</h3>
@@ -55,6 +70,20 @@
             name="information"
             value="{{item.information}}">
     </div>
+
+    <button type="submit">Salvar receita</button>
 </form>
+
+<script>
+
+    const formDelete = document.querySelector("#form-delete")
+    formDelete.addEventListener("submit", function(event){
+        const confirmation = confirm("Deseja Deletar?")
+        if(!confirmation){
+            event.preventDefault()
+        }
+    })
+
+</script>
 
 {% endblock %}

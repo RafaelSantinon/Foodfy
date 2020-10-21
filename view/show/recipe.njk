@@ -1,4 +1,4 @@
-{% extends "layout.njk" %}
+{% extends "show/layout.njk" %}
 
 {% block head %}
 <head>
@@ -41,7 +41,7 @@
     <div class="card-recipe">
         <div class="cabeça">
             <h2>Modo de preparo</h2>
-            <h3 class="secret">Remover</h2>
+            <h3 type="text"class="secret">Remover</h3>
         </div>
             <ul>
                 <div class="hidden">
@@ -66,5 +66,5 @@
 {% endblock %}
 
 {% block script %}
-<script src="/scripts.js"></script>
+<script src="/scriptsShow.js"></script>
 {% endblock %}
