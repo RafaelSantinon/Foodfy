@@ -1,0 +1,69 @@
+{% extends "admin/layout.njk" %}
+
+{% block head %}
+<head>
+    <title>Foodfy - Editar - {{items.title}}</title>
+    <link rel="stylesheet" href="/admin.css">
+</head>
+{% endblock %}
+
+{% block content %}
+<div class="edit">
+    <h1>Editando Chef</h1>
+    <div class="buttons">
+        <form id="form-delete" method="POST" action="/admin/chefs?_method=DELETE">
+
+            <input 
+                type="hidden" 
+                name="id" 
+                value="{{item.id}}"
+            >
+
+            <button type="submit">Deletar</button>
+
+        </form>
+    </div>
+</div>
+
+<form method="POST" action="/admin/chefs?_method=PUT" >
+
+    <input 
+        type="hidden" 
+        name="id" 
+        value="{{item.id}}"
+    >
+
+    <div class="item">
+        <h3>Nome</h3>
+        <input 
+            type="text"
+            name="name" 
+            alt="Nome"
+            value="{{item.name}}">
+    </div>
+
+    <div class="item">
+        <h3>Avatar</h3>
+        <input 
+            type="url"
+            name="avatar_url" 
+            alt="Avatar"
+            value="{{item.avatar_url}}">
+    </div>
+
+    <button type="submit">Salvar receita</button>
+</form>
+
+<script>
+
+    const formDelete = document.querySelector("#form-delete")
+    formDelete.addEventListener("submit", function(event){
+        const confirmation = confirm("Deseja Deletar?")
+        if(!confirmation){
+            event.preventDefault()
+        }
+    })
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "chef/layout.njk" %}
+
+{% block head %}
+<head>
+    <title>Foodfy - Novo Chef</title>
+    <link rel="stylesheet" href="/adminChef.css">
+</head>
+{% endblock %}
+
+{% block content %}
+<form action="/admin/chefs" method="POST">
+
+    <div class="edit">
+        <h1>Criando Chef</h1>
+        <div class="buttons">
+            <button type="submit">Salvar Chef</button>
+        </div>
+    </div>
+
+    <div class="item">
+        <h3>Nome</h3>
+        <input 
+            type="text"
+            name="name" 
+            alt="Nome do Chef">
+    </div>
+
+    <div class="item">
+        <h3>Avatar</h3>
+        <input 
+            type="url"
+            name="avatar_url" 
+            alt="Avatar do Chef">
+    </div>
+
+</form>
+{% endblock %}

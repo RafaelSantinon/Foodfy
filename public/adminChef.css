@@ -138,10 +138,9 @@ button.add-preparation{
     border: 1px solid #DDDDDD;
     border-radius: 4px;
     border-radius: 4px;
-}
+    padding: 0px 8px;
 
-.item:last-child input{
-    height: 257px;
+    box-sizing: border-box;
 }
 
 /* page show */
