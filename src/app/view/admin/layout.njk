@@ -3,7 +3,7 @@
 
     {% block head %}
     <head>
-        <title>Foodfy - Admin</title>
+        <title>Foodfy - Recipes</title>
         <link rel="stylesheet" href="/admin.css">
     </head>
     {% endblock %}
@@ -11,7 +11,11 @@
     <body>
 
         <header>
-            <a href="/admin/recipes"><img src="/logo2.png" alt="Logo"></a>
+            <img src="/logo2.png" alt="Logo">
+            <div class="menu">
+                <strong><a href="/admin/recipes">RECEITAS</a></strong>
+                <a href="/admin/chefs">CHEFS</a>
+            </div>
         </header>
 
         <div id="content">

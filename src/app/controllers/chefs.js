@@ -52,8 +52,15 @@ module.exports = {
         })
     },
     delete(req, res) {
-        chefs.delete(req.body.id, function() {
-            return res.redirect("chefs")
+        chefs.recipesForDelete(req.body.id, function(recipes){
+            if(recipes >= 1) res.send("Chef has recipes, impossible to delete!!")
+
+
+            if(recipes == 0) {
+            chefs.delete(req.body.id, function() {
+                return res.redirect("admin/chefs")
+            })
+            }
         })
     }
 }

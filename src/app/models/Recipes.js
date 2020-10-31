@@ -18,12 +18,12 @@ module.exports ={
                 ingredients,
                 preparation,
                 information,
-                created_at,
+                created_at
             )VALUES($1, $2, $3, $4, $5, $6, $7)
             RETURNING id
         `
         const values = [
-            data.chef_id,
+            data.chef,
             data.image,
             data.title,
             data.ingredients,
@@ -32,19 +32,21 @@ module.exports ={
             date(Date.now()).iso
         ]
 
-        console.log(data)
+        console.log(values)
 
         db.query(query, values, function(err, results) {
             if(err) throw `Database error ${err}`
-
+    
             callback(results.rows[0])
         })
     },
     find(id, callback) {
+
         db.query(`
-            SELECT *
+            SELECT recipes.*, chefs.name AS chef_name
             FROM recipes
-            WHERE id = $1`, [id], function(err, results) {
+            LEFT JOIN chefs ON (recipes.chef_id = chefs.id)
+            WHERE recipes.id = $1`, [id], function(err, results) {
                 if(err) throw `Database error ${err}`
 
                 callback(results.rows[0])

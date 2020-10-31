@@ -15,7 +15,7 @@ module.exports = {
         recipes.find(req.params.id, function(recipe) {
             if(!recipe) return res.send("Recipe not found")
 
-            return res.render("recipe/show", {items: recipe})
+            return res.render("admin/show", {items: recipe})
         })
     },
     post(req, res){
@@ -35,7 +35,7 @@ module.exports = {
         recipes.find(req.params.id, function(recipe) {
             if(!recipe) return res.send("Recipe not found")
 
-            return res.render("recipe/edit", {item: recipe})
+            return res.render("admin/edit", {item: recipe})
         })
     },
     put(req, res) {

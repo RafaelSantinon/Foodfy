@@ -16,25 +16,29 @@ header{
     height: 80px;
     background-color: black;
     display: grid;
-    grid-template-columns: 1fr 1.8fr;
+    grid-template-columns: 0.6fr 1.8fr;
 }
 
 header img{
-    margin-left: 45%;
+    margin-left: 60%;
     margin-top: 25px;
 }
 
 header .menu{
-    margin-top: 5%;
+    margin-top: 25px;
 }
 
 header .menu a{
     font-family: 'Roboto', sans-serif;
     text-decoration: none;
-    color: #FFFFFF;
+    color: #999999;
     font-size: 16px;
     line-height: 26px;
     margin-right: 5%;
+}
+
+header .menu strong a{
+    color: #FFFFFF;
 }
 
 #content h1{
@@ -213,6 +217,11 @@ button.add-preparation{
     line-height: 28px;
 
     list-style-type: none;
+}
+
+#recipe img{
+    height: 280px;
+    object-fit: cover;
 }
 
 /* edit page */
