@@ -1,14 +1,14 @@
-{% extends "admin/layout.njk" %}
+{% extends "chef/layout.njk" %}
 
 {% block head %}
 <head>
-    <title>Foodfy - Editar - {{items.title}}</title>
-    <link rel="stylesheet" href="/admin.css">
+    <title>Foodfy - Editar - {{item.name}}</title>
+    <link rel="stylesheet" href="/adminChef.css">
 </head>
 {% endblock %}
 
 {% block content %}
-<div class="edit">
+<div class="delete">
     <h1>Editando Chef</h1>
     <div class="buttons">
         <form id="form-delete" method="POST" action="/admin/chefs?_method=DELETE">
@@ -25,34 +25,19 @@
     </div>
 </div>
 
-<form method="POST" action="/admin/chefs?_method=PUT" >
+<div class="edit-button">
+    <form method="POST" action="/admin/chefs?_method=PUT" >
 
-    <input 
-        type="hidden" 
-        name="id" 
-        value="{{item.id}}"
-    >
-
-    <div class="item">
-        <h3>Nome</h3>
         <input 
-            type="text"
-            name="name" 
-            alt="Nome"
-            value="{{item.name}}">
-    </div>
+            type="hidden" 
+            name="id" 
+            value="{{item.id}}"
+        >
 
-    <div class="item">
-        <h3>Avatar</h3>
-        <input 
-            type="url"
-            name="avatar_url" 
-            alt="Avatar"
-            value="{{item.avatar_url}}">
-    </div>
-
-    <button type="submit">Salvar receita</button>
-</form>
+        {% include "chef/fields.njk" %}
+        
+    </form>
+</div>
 
 <script>
 

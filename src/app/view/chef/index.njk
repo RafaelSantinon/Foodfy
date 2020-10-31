@@ -8,7 +8,7 @@
 <div class="cards">
     {% for item in items %}
     <div class="card">
-        <img src="{{item.avatar_url}}" alt="">
+        <img src="{{item.avatar_url}}" alt="Image de {{item.name}}">
         <div class="card-info">
             <h2>{{item.name}}</h2>
             <a href="/admin/chefs/{{item.id}}">visualizar</a>
@@ -16,4 +16,5 @@
     </div>
     {% endfor %}
 </div>
+
 {% endblock %}

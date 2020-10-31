@@ -1,14 +1,14 @@
-{% extends "admin/layout.njk" %}
+{% extends "chef/layout.njk" %}
 
 {% block head %}
 <head>
-    <title>Foodfy - Admin - {{items.title}}</title>
-    <link rel="stylesheet" href="/admin.css">
+    <title>Foodfy - Admin - {{items.name}}</title>
+    <link rel="stylesheet" href="/adminChef.css">
 </head>
 {% endblock %}
 
 {% block content %} 
-<section id="recipe">
+<section id="chef">
 
     <div class="edit">
         <h1>Chef: {{items.name}}</h1>
@@ -17,19 +17,31 @@
         </div>
     </div>
 
-    <img src="{{items.avatar_url}}" alt="Imagem de {{items.name}}">
+    <div class="imageChef">
+        <img src="{{items.avatar_url}}" alt="Imagem de {{items.name}}">
+    </div>
 
     <div class="name">
         <h1>{{items.name}}</h1>
-        <p>por {{items.author}}</p>
+        <p>{{items.total_recipes}} receitas </p>
     </div>
 
-    <div class="card-recipe">
+    <div class="recipes">
         <h2>Receitas</h2>
+    </div>
+
+    <div class="cards-recipe">
         <ul>
-            {% for ingredient in items.ingredients %}
-            <li>- {{ingredient}}</li>
-            {% endfor %}
+        {% for recipe in recipes %}
+        <div class="card-recipe">
+            <img src="{{recipe.image}}" alt="">
+            <div class="card-info">
+                <h2>{{recipe.title}}</h2>
+                <h3>{{recipe.chef_name}}</h3>
+                <a href="/admin/recipes/{{recipe.id}}">visualizar</a>
+            </div>
+        </div>
+        {% endfor %}
         </ul>
     </div>
 

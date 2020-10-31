@@ -4,7 +4,7 @@ module.exports = {
     index(req, res) {
         chefs.all(function(items) {
             return res.render("chef/index", {items})
-        })    
+        })
     },
     create(req, res){
         return res.render("chef/create")
@@ -13,7 +13,9 @@ module.exports = {
         chefs.find(req.params.id, function(chef) {
             if(!chef) return res.send("Chef not found")
 
-            return res.render("chef/show", {items: chef})
+            chefs.findBy(chef.id, function(recipes) {
+                return res.render("chef/show", {items: chef, recipes})
+            })
         })
     },
     post(req, res){

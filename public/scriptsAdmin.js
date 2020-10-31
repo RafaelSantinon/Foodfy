@@ -7,4 +7,3 @@ for(let view of views){
         window.location.href= `/admin/recipes/${index}`
     })
 }
-

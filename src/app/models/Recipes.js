@@ -18,7 +18,7 @@ module.exports ={
                 ingredients,
                 preparation,
                 information,
-                created_at
+                created_at,
             )VALUES($1, $2, $3, $4, $5, $6, $7)
             RETURNING id
         `
@@ -31,6 +31,8 @@ module.exports ={
             data.information,
             date(Date.now()).iso
         ]
+
+        console.log(data)
 
         db.query(query, values, function(err, results) {
             if(err) throw `Database error ${err}`
